@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<style>
+html, body {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color:black;
+	overflow: scroll;
+}
+#container {
+	margin:auto;
+	background-color:blue;
+	width:900px;
+	height:600px;
+}
+canvas {
+	background-image: url("img/illustration.png");
+	background-size:cover;
+	background-position:left center;
+}
+button {
+	width:100px;
+	height:50px;
+	background-color:orange;
+	text-align: center;
+	margin:auto;
+}
+</style>
+	<script type="text/javascript" src="js/collie.min.js"></script>
+	<!-- animsition CSS -->
+<link rel="stylesheet" href="css/animsition.css">
+
+<!-- vendor js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- animsition js -->
+<script src="js/jquery.animsition.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+</script>
+</head>
+<body >
+	<div id="container" ></div>
+
+		<script type="text/javascript">
+		var layer = new collie.Layer({
+		    width: 900,
+		    height: 600
+		});
+		 
+		collie.ImageManager.add({
+		    bubble: "img/bubble.png"
+		});
+		 
+		var bubble = new collie.DisplayObject({
+		    x: 55,
+		    y: 75,
+		    scaleX:.5,
+		    scaleY:.5,
+		   // mass: 1,
+		    backgroundImage: "bubble"
+		}).addTo(layer);
+
+		collie.Timer.transition(bubble, 3000, {
+		        to : [55, 50],
+		        set : ["x", "y"],
+		        effect: collie.Effect.cubicEase
+		    });
+		 
+		collie.Renderer.addLayer(layer);
+		collie.Renderer.load(document.getElementById("container"));
+		collie.Renderer.start();
+		</script>
+
+	<button type="button"><a href="questions.html" >Get Started!</a></button></div>
+	</div>
+</body>
+</html>
