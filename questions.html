@@ -1,95 +1,79 @@
 <html>
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots|Raleway:400,200,800' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link href = "css/selectordie.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/selectordie.js"></script>
+	<script type = "text/javascript" src="js/quiz.js"></script>
 
 	<style>
-	html,body {
-		margin:0;
-		padding:0;
-	}
-	body {
-		background-color:#d55c3d;
-		height:100%;
-		width:100%;
-		overflow:hidden;
-		color:white;
-		font-family:'Raleway',sans-serif;
-		font-weight:200;
-		font-size:18px;
-	}
-	#q2 {
-		background-color:#7f564b;
-	}
-	#q3 {
-		background-color:blue;
-	}
-	.question {
-		height:100%;
-		width:100%;
-		text-align: center;
-		padding-top:10%;
-	}
-	.question h2 {
-		font-family:'Raleway Dots';
-		font-size:4em;
-		font-weight:200;
-	}
-	.question h4 {
-		font-size:2em;
-		font-weight:200;
-	}
-	.question a {
-		font-size:1.8em;
-	}
-	.question select {
-		display:block;
-		margin:auto;
-		padding-bottom:2em;
-		width:4em;
-	}
-	.container {
-		text-align: center;
-		width:80%;
-		margin:auto;
-	}
+
 	</style>
 	
 </head>
 <body>
 	<div id = "q1" class = "question">
 		<div class = "container">
-			<h2>Let's Get Started</h2>
-			<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
-			<select>
-				<option value=null>Choose One</option>
-				  <option value="volvo">Picking color palettes and handling layout. </option>
-				  <option value="saab">Diving straight into that CODE!</option>
-				  <option value="mercedes">Brainstorming the functionality you could add</option>
-				  <option value="audi">Coming up with a sweet logo</option>
-			</select><br>
-			<a href = "#q2">Keep Going</a>
+			<div class = "left">
+				<h2>Let's Get Started</h2>
+				<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
+				<select id = "question1">
+					<option value=null>Choose One</option>
+					  <option value="graphic">Picking color palettes and handling layout. </option>
+					  <option value="web">Diving straight into that CODE!</option>
+					  <option value="program">Brainstorming the functionality you could add</option>
+					  <option value="graphic">Coming up with a sweet logo</option>
+				</select><br>
+				<a href = "#q2" id ="test">Keep Going</a>
+			</div>
+			<div class = "right">
+			</div>
 			
 		</div>
 	</div>
 
 	<div id = "q2" class = "question">
 		<div class = "container">
-		<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
-			<select>
-				<option value=null>Choose One</option>
-				  <option value="volvo">Picking color palettes and handling layout. </option>
-				  <option value="saab">Diving straight into that CODE!</option>
-				  <option value="mercedes">Brainstorming the functionality you could add</option>
-				  <option value="audi">Coming up with a sweet logo</option>
-			</select><br>
-			<a href = "index.html">Keep Going</a>
+			<div class = "left">
+				<h4>It's the end of the semester, and final projects are due soon. You have to make an online portfolio, a .... and a web app based on modern frameworks. Knowing yourself, you like to work on your favorite project first. You start on...</h4>
+					<select id = "question2">
+						<option value=null>Choose One</option>
+						  <option value="web">the portfolio </option>
+						  <option value="web">the ...</option>
+						  <option value="program">the web app</option>
+						  <option value="graphic">some illustrations for each of them. Functionality comes later.</option>
+					</select><br>
+				<a href = "#q3">Keep Going</a>
+			</div>
+			<div class= "right">
+			</div>
 		</div>
 	</div>
 
 	<div id = "q3" class = "question">
+		<div class = "container">
+			<div class = "left">
+				<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
+				<select id="question3">
+				  <option value = "web">Picking color palettes and handling layout. </option>
+				  <option value = "program">Diving straight into that CODE!</option>
+				  <option value = "program">Brainstorming the functionality you could add</option>
+				  <option value = "graphic">Coming up with a sweet logo</option>
+				</select>	<br>
+
+				<a href = "#results">
+				<button type="button" onclick="myFunction()">Get my Results!</button>
+			</a>
+			</div>
+			<div class= "right">
+			</div>
+		</div>
+	</div>
+	<div id = "results">
+		<a href = "index.html">
+		<button type = "button">Start Over</button>
+	</a>
 	</div>
 <script>$("select").selectOrDie();</script>
 </body>
