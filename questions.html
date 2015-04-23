@@ -6,6 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/selectordie.js"></script>
 	<script type = "text/javascript" src="js/quiz.js"></script>
+	<script type="text/javascript" src="js/collie.min.js"></script>
 
 	<style>
 
@@ -14,12 +15,12 @@
 </head>
 <body>
 	<div id = "q1" class = "question">
-		<div class = "container">
+		<div class = "content-container">
 			<div class = "left">
 				<h2>Let's Get Started</h2>
 				<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
 				<select id = "question1">
-					<option value=null>Choose One</option>
+					<option value=null >Choose One</option>
 					  <option value="graphic">Picking color palettes and handling layout. </option>
 					  <option value="web">Diving straight into that CODE!</option>
 					  <option value="program">Brainstorming the functionality you could add</option>
@@ -28,14 +29,18 @@
 				<a href = "#q2" id ="test">Keep Going</a>
 			</div>
 			<div class = "right">
+				<img src = "img/armsCrossed.png">
 			</div>
 			
 		</div>
 	</div>
 
 	<div id = "q2" class = "question">
-		<div class = "container">
+		<div class = "content-container">
 			<div class = "left">
+				<img src = "img/handOnChin.png">
+			</div>
+			<div class= "right">
 				<h4>It's the end of the semester, and final projects are due soon. You have to make an online portfolio, a .... and a web app based on modern frameworks. Knowing yourself, you like to work on your favorite project first. You start on...</h4>
 					<select id = "question2">
 						<option value=null>Choose One</option>
@@ -46,13 +51,11 @@
 					</select><br>
 				<a href = "#q3">Keep Going</a>
 			</div>
-			<div class= "right">
-			</div>
 		</div>
 	</div>
 
 	<div id = "q3" class = "question">
-		<div class = "container">
+		<div class = "content-container">
 			<div class = "left">
 				<h4>A friend asks you to make a website for a company he's starting. You get excited about...</h4>
 				<select id="question3">
@@ -67,10 +70,12 @@
 			</a>
 			</div>
 			<div class= "right">
+				<img src = "img/thinking.png">
 			</div>
 		</div>
 	</div>
 	<div id = "results">
+		<div id ="container"></div>
 		<a href = "index.html">
 		<button type = "button">Start Over</button>
 	</a>
