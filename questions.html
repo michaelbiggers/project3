@@ -2,12 +2,13 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Raleway+Dots|Raleway:400,200,800' rel='stylesheet' type='text/css'>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/hover.css" rel="stylesheet" media="all">
+
 	<link href = "css/selectordie.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/selectordie.js"></script>
 	<script type = "text/javascript" src="js/quiz.js"></script>
 	<script type="text/javascript" src="js/collie.min.js"></script>
-
 	<style>
 
 	</style>
@@ -26,6 +27,7 @@
 					  <option value="program">Brainstorming the functionality you could add</option>
 					  <option value="graphic">Coming up with a sweet logo</option>
 				</select><br>
+				<br>
 				<a href = "#q2" id ="test">Keep Going</a>
 			</div>
 			<div class = "right">
@@ -49,6 +51,7 @@
 						  <option value="program">the web app</option>
 						  <option value="graphic">some illustrations for each of them. Functionality comes later.</option>
 					</select><br>
+					<br>
 				<a href = "#q3">Keep Going</a>
 			</div>
 		</div>
@@ -66,7 +69,10 @@
 				</select>	<br>
 
 				<a href = "#results">
-				<button type="button" onclick="myFunction()">Get my Results!</button>
+					<br>
+				<button type="button" onclick="myFunction()" class="hvr-shutter-out-horizontal">Get my Results!</button>
+
+
 			</a>
 			</div>
 			<div class= "right">
@@ -77,7 +83,7 @@
 	<div id = "results">
 		<div id ="container"></div>
 		<a href = "index.html">
-		<button type = "button">Start Over</button>
+		<button type = "button" class="hvr-shutter-out-horizontal">Start Over</button>
 	</a>
 	</div>
 <script>$("select").selectOrDie();</script>
