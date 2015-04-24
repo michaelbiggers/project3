@@ -77,31 +77,80 @@ function myFunction() {
 		});
 		 
 		collie.ImageManager.add({
-		    bubble: "img/bubble.png",
-		    background: "img/webDesign.png"
+		    clouds1: "img/clouds1.png",
+		    clouds2: "img/clouds2.png",
+		    background: "img/webDesign.png",
+		    wall: "img/wall.png",
+		    windowBG: "img/windowBG.png",
+		    car: "img/car.png"
 		});
 
 		var background = new collie.DisplayObject({
 			width : layer.get("width"),
 			height : layer.get("height"),
 			fitImage : true,
+			zIndex: 0,
 			backgroundImage : "background"
 			}).addTo(layer);
-		 
-		var bubble = new collie.DisplayObject({
-		    x: 55,
-		    y: 75,
-		    scaleX:.5,
-		    scaleY:.5,
-		   // mass: 1,
-		    backgroundImage: ""
+
+		var windowBG = new collie.DisplayObject({
+			width:layer.get("width"),
+			height: layer.get("height"),
+			fitImage: true,
+			zIndex:1,
+			backgroundImage:"windowBG"
+
 		}).addTo(layer);
 
-		collie.Timer.transition(bubble, 3000, {
-		        to : [55, 50],
-		        set : ["x", "y"],
-		        effect: collie.Effect.cubicEase
-		    });
+		var clouds1 = new collie.DisplayObject({
+		    x : 0,
+		    y : 0,
+		    width : layer.get("width"),
+		    height : layer.get("height"),
+		    velocityX : -10,
+		    zIndex : 2,
+		    backgroundRepeat : "repeat-x",
+		    rangeX : [-800, 200], // This object can move from first position to second position.
+		    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+		    backgroundImage : "clouds1"
+		}).addTo(layer);
+
+		var clouds2 = new collie.DisplayObject({
+		    x : 0,
+		    y : 0,
+		    width : layer.get("width"),
+		    height : layer.get("height"),
+		    velocityX : -7,
+		    zIndex : 2,
+		    backgroundRepeat : "repeat-x",
+		    rangeX : [-800, 400], // This object can move from first position to second position.
+		    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+		    backgroundImage : "clouds2"
+		}).addTo(layer);
+
+		var car = new collie.DisplayObject({
+		    x : -500,
+		    y : -250,
+		    width : layer.get("width"),
+		    height : layer.get("height"),
+		    velocityX : 200,
+		    zIndex : 3,
+		    fitImage:true,
+		    backgroundRepeat : "repeat-x",
+		    rangeX : [-800, 4000], // This object can move from first position to second position.
+		    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+		    backgroundImage : "car"
+		}).addTo(layer);
+		 
+		var wall = new collie.DisplayObject({
+			width: layer.get("width"),
+			height: layer.get("height"),
+			fitImage: true,
+			zIndex: 3,
+			backgroundImage: "wall"
+		}).addTo(layer);	
+
+		
 		 
 		collie.Renderer.addLayer(layer);
 		collie.Renderer.load(document.getElementById("container"));
