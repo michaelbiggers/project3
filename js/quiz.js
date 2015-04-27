@@ -379,6 +379,149 @@ function myFunction() {
 	
 	}
 	else {
-		alert("You're a great Mix!");
+		var layer = new collie.Layer({
+		    width: window.innerWidth,
+		    height: window.innerHeight
+		});
+		 
+		collie.ImageManager.add({
+		    background: "img/graphic_bg.png",
+		    graphic_main: "img/graphic_main.png",
+		    graphic_bubble: "img/graphic_bubble.png",
+		    graphic_dot1: "img/graphic_dot1.png",
+		    graphic_dot2: "img/graphic_dot2.png",
+		    graphic_dot3: "img/graphic_dot3.png",
+		    graphic_cloud1: "img/graphic_cloud1.png",
+		    graphic_cloud2: "img/graphic_cloud2.png",
+		    graphic_cloud3: "img/graphic_cloud3.png",
+		    graphic_planet: "img/graphic_planet.png",
+		    graphic_logo: "img/graphic_logo.png",
+		    graphic_plane: "img/graphic_plane.png",
+
+		});
+
+		var background = new collie.DisplayObject({
+			width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:4,
+			backgroundImage : "background"
+			}).addTo(layer);
+
+		 var graphic_main = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:4,
+			backgroundImage : "graphic_main"
+			}).addTo(layer);
+
+		 var graphic_bubble = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:1,
+			backgroundImage : "graphic_bubble"
+			}).addTo(layer);
+
+		 var graphic_dot1 = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:1,
+			backgroundImage : "graphic_dot1"
+			}).addTo(layer);
+
+		  var graphic_dot2 = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:1,
+			backgroundImage : "graphic_dot2"
+			}).addTo(layer);
+
+		   var graphic_dot3 = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:1,
+			backgroundImage : "graphic_dot3"
+			}).addTo(layer);
+
+		   var graphic_cloud1 = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:3,
+			velocityX : -7,
+		    zIndex : 2,
+		    opacity: .6,
+		    backgroundRepeat : "repeat-x",
+		    rangeX : [-window.innerWidth, window.innerWidth], // This object can move from first position to second position.
+		    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+			backgroundImage : "graphic_cloud1"
+			}).addTo(layer); 
+
+		   	var graphic_cloud2 = new collie.DisplayObject({
+		 	width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex:3,
+			velocityX : -12,
+		    zIndex : 2,
+		    opacity: 1,
+		    backgroundRepeat : "repeat-x",
+		    rangeX : [-window.innerWidth, window.innerWidth], // This object can move from first position to second position.
+		    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+			backgroundImage : "graphic_cloud2"
+			}).addTo(layer); 
+
+			var graphic_cloud3 = new collie.DisplayObject({
+			 	width : layer.get("width"),
+				height : layer.get("height"),
+				fitImage : true,
+				zIndex:3,
+				velocityX : -19,
+			    zIndex : 2,
+			    opacity: .9,
+			    backgroundRepeat : "repeat-x",
+			    rangeX : [-window.innerWidth, window.innerWidth], // This object can move from first position to second position.
+			    positionRepeat : true, // This object move the other side when It's on one end of the edge.
+				backgroundImage : "graphic_cloud3"
+			}).addTo(layer); 
+
+			var graphic_planet = new collie.DisplayObject({
+				width : layer.get("width"),
+				height : layer.get("height"),
+				fitImage : true,
+				zIndex:2,
+				backgroundImage: "graphic_planet"
+			}).addTo(layer);
+
+			var graphic_logo = new collie.DisplayObject({
+				y:30,
+				width : layer.get("width"),
+				height : layer.get("height"),
+				fitImage : true,
+				zIndex:2,
+				backgroundImage: "graphic_logo"
+			}).addTo(layer);
+
+			var graphic_plane = new collie.DisplayObject({
+				width : layer.get("width"),
+				height : layer.get("height"),
+				fitImage : true,
+				zIndex:2,
+				backgroundImage: "graphic_plane"
+			}).addTo(layer);
+
+			collie.Timer.transition(graphic_logo, 4000, {
+		        to : [0, 0],
+		        set : ["x", "y"],
+		        effect: collie.Effect.cubicEase
+		    });
+		collie.Renderer.addLayer(layer);
+		collie.Renderer.load(document.getElementById("container"));
+		collie.Renderer.start();
 	}
 }

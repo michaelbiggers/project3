@@ -19,9 +19,7 @@ body {
 	height:600px;
 }
 canvas {
-	background-image: url("img/illustration.png");
-	background-size:cover;
-	background-position:left center;
+
 }
 button {
 	width:100px;
@@ -53,12 +51,21 @@ button {
 		});
 		 
 		collie.ImageManager.add({
-		    bubble: "img/bubble.png"
+		    bubble: "img/bubble.png",
+		    bg: "img/illustration.png"
 		});
+		var bg = new collie.DisplayObject({
+			width : layer.get("width"),
+			height : layer.get("height"),
+			fitImage : true,
+			zIndex: 0,
+			backgroundImage : "bg"
+			}).addTo(layer);
 		 
 		var bubble = new collie.DisplayObject({
 		    x: 55,
 		    y: 75,
+		    fitImage: true,
 		    scaleX:.5,
 		    scaleY:.5,
 		   // mass: 1,
